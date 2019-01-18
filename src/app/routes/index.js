@@ -24,6 +24,12 @@ const Films = Loadable({
   modules: ["films"]
 });
 
+const Contact = Loadable({
+  loader: () => import("./contact"),
+  loading: () => null,
+  modules: ["contact"]
+});
+
 // const Dashboard = Loadable({
 //   loader: () => import('./dashboard'),
 //   loading: () => null,
@@ -53,6 +59,7 @@ export default () => (
     <Route exact path="/" component={Homepage} />
     <Route exact path="/about" component={About} />
     <Route exact path="/films" component={Films} />
+    <Route exact path="/contact" component={Contact} />
 
     {/* <Route exact path="/profile/:id" component={Profile} /> */}
 
