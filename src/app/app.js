@@ -11,6 +11,7 @@ import { isServer } from "../store";
 import Header from "./header";
 import Routes from "./routes";
 
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./app.css";
 
 class App extends Component {
@@ -27,7 +28,7 @@ class App extends Component {
           isAuthenticated={this.props.isAuthenticated}
           current={this.props.location.pathname}
         />
-        <div id="content">
+        <div id="content" className="container pt-5">
           <Routes />
         </div>
       </div>
