@@ -6,22 +6,43 @@ import Loadable from "react-loadable";
 
 import NotFound from "./not-found";
 
-const Homepage = Loadable({
-  loader: () => import("./homepage"),
+const Home = Loadable({
+  loader: () => import("./home"),
   loading: () => null,
-  modules: ["homepage"]
+  modules: ["home"]
+});
+const AboutManny = Loadable({
+  loader: () => import("./about-manny"),
+  loading: () => null,
+  modules: ["about-manny"]
+});
+const AboutStunts = Loadable({
+  loader: () => import("./about-stunts"),
+  loading: () => null,
+  modules: ["about-stunts"]
+});
+const AboutHistory = Loadable({
+  loader: () => import("./about-history"),
+  loading: () => null,
+  modules: ["about-history"]
 });
 
-const About = Loadable({
-  loader: () => import("./about"),
+const Services = Loadable({
+  loader: () => import("./services"),
   loading: () => null,
-  modules: ["about"]
+  modules: ["services"]
 });
 
-const Films = Loadable({
-  loader: () => import("./films"),
+const Portfolio = Loadable({
+  loader: () => import("./portfolio"),
   loading: () => null,
-  modules: ["films"]
+  modules: ["portfolio"]
+});
+
+const Media = Loadable({
+  loader: () => import("./media"),
+  loading: () => null,
+  modules: ["media"]
 });
 
 const Contact = Loadable({
@@ -56,9 +77,17 @@ const Contact = Loadable({
 
 export default () => (
   <Switch>
-    <Route exact path="/" component={Homepage} />
-    <Route exact path="/about" component={About} />
-    <Route exact path="/films" component={Films} />
+    <Route exact path="/" component={Home} />
+    <Route exact path="/about/manny-siverio" component={AboutManny} />
+    <Route exact path="/about/stunt-work" component={AboutStunts} />
+    <Route
+      exact
+      path="/about/siverio-stunts-history"
+      component={AboutHistory}
+    />
+    <Route exact path="/services" component={Services} />
+    <Route exact path="/portfolio" component={Portfolio} />
+    <Route exact path="/media" component={Media} />
     <Route exact path="/contact" component={Contact} />
 
     {/* <Route exact path="/profile/:id" component={Profile} /> */}
