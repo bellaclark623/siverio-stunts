@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import YouTube from "react-youtube";
-import Page from "../../components/page";
+import HomepageLayout from "../../layouts/HomepageLayout";
 
 function getElementWidth(el) {
   let youtubeWrapperWidth;
@@ -51,40 +51,42 @@ export default class Home extends Component {
 
   render() {
     return (
-      <Page id="homepage">
-        <div className="row">
-          <main
-            className="col-12 col-md-9"
-            ref={youtubeWrapperDiv => {
-              this.youtubePlayerWrapper = youtubeWrapperDiv;
-            }}
-          >
-            <YouTube
-              videoId="bJiXtyad_xg"
-              opts={{
-                width: "100%",
-                height: this.state.calculatedHeight,
-                modestbranding: "true"
-                // playerVars: { // https://developers.google.com/youtube/player_parameters
-                //   autoplay: 1
-                // } TODO: turn this back on after youre done developing
+      <HomepageLayout id="homepage">
+        <div className="container py-5">
+          <div className="row">
+            <main
+              className="col-12 col-md-9"
+              ref={youtubeWrapperDiv => {
+                this.youtubePlayerWrapper = youtubeWrapperDiv;
               }}
-            />
-          </main>
-          <aside className="col-12 col-md-3">
-            <div className="tweets-wrapper">
-              <TwitterTimelineEmbed
-                noFooter
-                sourceType="profile"
-                screenName="siveriostunts"
-                options={{
-                  height: this.state.calculatedHeight
+            >
+              <YouTube
+                videoId="bJiXtyad_xg"
+                opts={{
+                  width: "100%",
+                  height: this.state.calculatedHeight,
+                  modestbranding: "true"
+                  // playerVars: { // https://developers.google.com/youtube/player_parameters
+                  //   autoplay: 1
+                  // } TODO: turn this back on after youre done developing
                 }}
               />
-            </div>
-          </aside>
+            </main>
+            <aside className="col-12 col-md-3">
+              <div className="tweets-wrapper">
+                <TwitterTimelineEmbed
+                  noFooter
+                  sourceType="profile"
+                  screenName="siveriostunts"
+                  options={{
+                    height: this.state.calculatedHeight
+                  }}
+                />
+              </div>
+            </aside>
+          </div>
         </div>
-      </Page>
+      </HomepageLayout>
     );
   }
 }
