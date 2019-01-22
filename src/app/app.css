@@ -14,6 +14,13 @@
   height: 85vh;
 }
 
+.InteriorLayout-subheading {
+  background: #e8e8e8;
+}
+.InteriorLayout-subheading p {
+  margin-bottom: 0;
+}
+
 #title {
   margin-top: 0px;
   font-size: 1.5em;
