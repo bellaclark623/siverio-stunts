@@ -7,13 +7,11 @@ import InteriorLayout from "../../layouts/InteriorLayout";
 export default () => (
   <InteriorLayout
     id="contact"
-    title="Contact"
-    description="This is about really cool stuff."
+    title="Contact Us"
+    description="I would love to hear from you. Fill out the form below!"
   >
     <div className="row">
       <main className="col-12 col-md-9">
-        <h3>Contact Us</h3>
-        <p>I would love to hear from you. Fill out the form below!</p>
         <Form>
           <FormGroup>
             <Label for="contactFormFullName">Full Name</Label>
