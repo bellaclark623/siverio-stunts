@@ -1,8 +1,12 @@
 import React from "react";
-import Page from "../../components/page";
+import InteriorLayout from "../../layouts/InteriorLayout";
 
 export default () => (
-  <Page id="about" title="About" description="This is about really cool stuff.">
+  <InteriorLayout
+    id="about-stunts"
+    title="Getting Into Stunt Work"
+    description="TODO: write this"
+  >
     <p>What we're all about</p>
-  </Page>
+  </InteriorLayout>
 );

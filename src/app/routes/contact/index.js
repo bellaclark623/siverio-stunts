@@ -2,10 +2,10 @@ import React from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import { FaMobileAlt } from "react-icons/fa";
 
-import Page from "../../components/page";
+import InteriorLayout from "../../layouts/InteriorLayout";
 
 export default () => (
-  <Page
+  <InteriorLayout
     id="contact"
     title="Contact"
     description="This is about really cool stuff."
@@ -46,5 +46,5 @@ export default () => (
         </table>
       </aside>
     </div>
-  </Page>
+  </InteriorLayout>
 );

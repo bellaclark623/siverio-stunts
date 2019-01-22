@@ -1,9 +1,9 @@
 import React from "react";
-import Page from "../../components/page";
 import filmsData from "../../data/films.json";
+import InteriorLayout from "../../layouts/InteriorLayout";
 
 export default () => (
-  <Page
+  <InteriorLayout
     id="films"
     title="Films"
     description="View Manny Siverio's stunt work portfolio."
@@ -18,5 +18,5 @@ export default () => (
         );
       })}
     </div>
-  </Page>
+  </InteriorLayout>
 );
