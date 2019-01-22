@@ -4,14 +4,16 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 // Action creators and helpers
 import { establishCurrentUser } from "../modules/auth";
 import { isServer } from "../store";
 
-import Header from "./header";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Routes from "./routes";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./app.css";
 
 class App extends Component {
@@ -28,9 +30,10 @@ class App extends Component {
           isAuthenticated={this.props.isAuthenticated}
           current={this.props.location.pathname}
         />
-        <div id="content" className="container pt-5">
+        <div id="content">
           <Routes />
         </div>
+        <Footer current={this.props.location.pathname} />
       </div>
     );
   }
