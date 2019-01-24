@@ -28,12 +28,21 @@ export default () => (
             standing in the industry has kept him busy working in NYC and
             traveling around the nation and Puerto Rico, performing,
             coordinating and directing stunts. Among his credits are{" "}
-            <strong>Did You Hear About The Morgans?</strong>, We Own The Night,
-            Steven Soderburgh's Che', Wes Craven's 25/8, Ugly Betty Season 3 &
-            4, Supertroopers, Girl Fight, Third Watch, Blade, Money Train, Men
-            In Black, Dead Presidents, New York Undercover, Law &The First Wives
-            Club, Dellaventura, Oz, Malcom X, The Super, Out for Justice, King
-            of New York and CopLand.
+            <strong>Did You Hear About The Morgans?</strong>,{" "}
+            <strong>We Own The Night</strong>,{" "}
+            <strong>Steven Soderburgh's Che'</strong>,{" "}
+            <strong>Wes Craven's 25/8</strong>,{" "}
+            <strong>Ugly Betty Season 3 & 4</strong>,{" "}
+            <strong>Supertroopers</strong>, <strong>Girl Fight</strong>,{" "}
+            <strong>Third Watch</strong>, <strong>Blade</strong>,{" "}
+            <strong>Money Train</strong>, <strong>Men In Black</strong>,{" "}
+            <strong>Dead Presidents</strong>,{" "}
+            <strong>New York Undercover</strong>,{" "}
+            <strong>Law &The First Wives Club</strong>,{" "}
+            <strong>Dellaventura</strong>, <strong>Oz</strong>,{" "}
+            <strong>Malcom X</strong>, <strong>The Super</strong>,{" "}
+            <strong>Out for Justice</strong>,{" "}
+            <strong>King of New York and CopLand</strong>.
           </p>
         </div>
       </div>
