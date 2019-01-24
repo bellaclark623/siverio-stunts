@@ -23,13 +23,35 @@ export default () => {
       title="Portfolio"
       description="View Manny Siverio's stunt work portfolio."
     >
+      <div className="row">
+        <div className="col-12">
+          <p>
+            {Object.keys(years)
+              .sort((a, b) => b - a)
+              .map(year => {
+                return (
+                  <span>
+                    <a href={`#year-${year}`}>{year}</a>
+                    &nbsp;
+                    <wbr />
+                  </span>
+                );
+              })}
+          </p>
+        </div>
+      </div>
       <div className="lists-wrapper">
         {Object.keys(years)
           .sort((a, b) => b - a)
           .map(year => {
             return (
               <div>
-                <h5>{year}</h5>
+                <h5 id={`year-${year}`}>
+                  <br />
+                  <br />
+                  <br />
+                  {year}
+                </h5>
                 <ul>
                   {years[year].map(film => {
                     return (
