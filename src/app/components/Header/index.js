@@ -27,13 +27,7 @@ export default class Header extends Component {
 
     return (
       <header id="header">
-        <Navbar
-          dark
-          fixed="top"
-          color="dark"
-          expand="md"
-          className="container-fluid"
-        >
+        <Navbar dark color="dark" expand="md" className="container-fluid">
           <NavbarBrand href="/">Siverio Stunts</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
