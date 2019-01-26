@@ -32,8 +32,8 @@ class App extends Component {
         />
         <div id="content">
           <Routes />
+          <Footer current={this.props.location.pathname} />
         </div>
-        <Footer current={this.props.location.pathname} />
       </div>
     );
   }
