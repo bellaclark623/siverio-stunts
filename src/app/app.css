@@ -6,6 +6,9 @@
 
 #content {
   flex-grow: 1;
+  height: calc(100vh - 56px);
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .hero {
@@ -48,15 +51,48 @@
   color: white;
 }
 
-#content {
-  height: calc(100vh - 56px);
-  overflow: hidden;
-  overflow-y: scroll;
-}
-
 .lists-wrapper h5 {
   margin-top: 1rem;
   padding-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#back-to-top {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: #343a40;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  color: white;
+  border-radius: 4px;
+  visibility: hidden;
+}
+
+#back-to-top.active {
+  visibility: visible;
+  animation: fadeIn 0.15s linear;
+}
+
+#back-to-top.inactive {
+  visibility: hidden;
+  animation: fadeOut 0.15s linear;
 }
 
 footer {

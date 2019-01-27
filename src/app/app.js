@@ -1,14 +1,8 @@
 // The basics
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import { withRouter } from "react-router";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-
-// Action creators and helpers
-import { establishCurrentUser } from "../modules/auth";
-import { isServer } from "../store";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -17,11 +11,7 @@ import Routes from "./routes";
 import "./app.css";
 
 class App extends Component {
-  componentWillMount() {
-    if (!isServer) {
-      this.props.establishCurrentUser();
-    }
-  }
+  state = { contentWrapper: null };
 
   render() {
     return (
@@ -30,8 +20,13 @@ class App extends Component {
           isAuthenticated={this.props.isAuthenticated}
           current={this.props.location.pathname}
         />
-        <div id="content">
-          <Routes />
+        <div
+          id="content"
+          ref={ref =>
+            !this.state.contentWrapper && this.setState({ contentWrapper: ref })
+          }
+        >
+          <Routes contentWrapper={this.state.contentWrapper} />
           <Footer current={this.props.location.pathname} />
         </div>
       </div>
@@ -39,16 +34,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ establishCurrentUser }, dispatch);
-
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(App)
-);
+export default withRouter(App);
