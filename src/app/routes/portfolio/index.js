@@ -17,6 +17,10 @@ export default () => {
     years[film.year].push(film); // add film to year bucket
   });
 
+  const handleSelectOnChange = event => {
+    document.location.href = `#year-${event.target.value}`;
+  };
+
   return (
     <InteriorLayout
       id="portfolio"
@@ -25,19 +29,14 @@ export default () => {
     >
       <div className="row">
         <div className="col-12">
-          <p>
+          <span>Jump to:&nbsp;</span>
+          <select onChange={handleSelectOnChange}>
             {Object.keys(years)
               .sort((a, b) => b - a)
               .map((year, index) => {
-                return (
-                  <span key={index}>
-                    <a href={`#year-${year}`}>{year}</a>
-                    &nbsp;
-                    <wbr />
-                  </span>
-                );
+                return <option key={index}>{year}</option>;
               })}
-          </p>
+          </select>
         </div>
       </div>
       <div className="lists-wrapper">
@@ -46,12 +45,7 @@ export default () => {
           .map((year, index) => {
             return (
               <div key={index}>
-                <h5 id={`year-${year}`}>
-                  <br />
-                  <br />
-                  <br />
-                  {year}
-                </h5>
+                <h5 id={`year-${year}`}>{year}</h5>
                 <ul>
                   {years[year].map((film, index) => {
                     return (
