@@ -2,7 +2,7 @@ import React from "react";
 import filmsData from "../../data/films.json";
 import InteriorLayout from "../../layouts/InteriorLayout";
 
-export default () => {
+export default props => {
   const years = {};
 
   // Create an array for each year found in the data
@@ -26,6 +26,7 @@ export default () => {
       id="portfolio"
       title="Portfolio"
       description="View Manny Siverio's stunt work portfolio."
+      {...props}
     >
       <div className="row">
         <div className="col-12">
