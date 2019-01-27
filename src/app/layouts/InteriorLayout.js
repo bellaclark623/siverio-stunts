@@ -29,8 +29,6 @@ export default class InteriorLayout extends Component {
 
     let activeToggle;
 
-    console.log(this.props.contentWrapper);
-
     if (this.state.showBackToTop === null) {
     } else if (!this.state.showBackToTop) {
       activeToggle = "inactive";

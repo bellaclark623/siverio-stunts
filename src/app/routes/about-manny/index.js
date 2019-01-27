@@ -2,11 +2,12 @@ import React from "react";
 import InteriorLayout from "../../layouts/InteriorLayout";
 import mannyImg from "../../assets/mannypic3.jpg";
 
-export default () => (
+export default props => (
   <InteriorLayout
     id="about-manny"
     title="About Manny Siverio"
     description="TODO: write this"
+    {...props}
   >
     <div>
       <div className="row">

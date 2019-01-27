@@ -15,15 +15,11 @@ const LoadableWithInjectedProps = (config, injectedProps) =>
     }
   });
 
-const Home = injectedProps =>
-  LoadableWithInjectedProps(
-    {
-      loader: () => import("./home"),
-      loading: () => null,
-      modules: ["home"]
-    },
-    injectedProps
-  );
+const Home = Loadable({
+  loader: () => import("./home"),
+  loading: () => null,
+  modules: ["home"]
+});
 
 const AboutManny = injectedProps =>
   LoadableWithInjectedProps(
@@ -98,19 +94,19 @@ const Contact = injectedProps =>
 export default props => (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route exact path="/about/manny-siverio" component={AboutManny} />
-    <Route exact path="/about/stunt-work" component={AboutStunts} />
+    <Route exact path="/portfolio" component={Portfolio(props)} />
+    <Route exact path="/about/manny-siverio" component={AboutManny(props)} />
+    <Route exact path="/about/stunt-work" component={AboutStunts(props)} />
     <Route
       exact
       path="/about/siverio-stunts-history"
-      component={AboutHistory}
+      component={AboutHistory(props)}
     />
-    <Route exact path="/services" component={Services} />
-    <Route exact path="/portfolio" component={Portfolio(props)} />
-    <Route exact path="/media" component={Media} />
-    <Route exact path="/contact" component={Contact} />
-    {/* <UnauthenticatedRoute exact path="/login" component={Login} /> */}
-    {/* <AuthenticatedRoute exact path="/logout" component={Logout} /> */}
+    <Route exact path="/services" component={Services(props)} />
+    <Route exact path="/media" component={Media(props)} />
+    <Route exact path="/contact" component={Contact(props)} />
+    {/* <UnauthenticatedRoute exact path="/login" component={Login(props)} /> */}
+    {/* <AuthenticatedRoute exact path="/logout" component={Logout(props)} /> */}
     <Route component={NotFound} />
   </Switch>
 );

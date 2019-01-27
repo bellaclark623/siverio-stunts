@@ -4,11 +4,12 @@ import { FaMobileAlt } from "react-icons/fa";
 
 import InteriorLayout from "../../layouts/InteriorLayout";
 
-export default () => (
+export default props => (
   <InteriorLayout
     id="contact"
     title="Contact Us"
     description="I would love to hear from you. Fill out the form below!"
+    {...props}
   >
     <div className="row">
       <main className="col-12 col-md-9">
