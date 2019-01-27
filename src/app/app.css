@@ -54,6 +54,11 @@
   overflow-y: scroll;
 }
 
+.lists-wrapper h5 {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
 footer {
   background: #efefef;
   font-size: 0.9rem;
