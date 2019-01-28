@@ -6,7 +6,8 @@ export default props => (
   <InteriorLayout
     id="about-manny"
     title="About Manny Siverio"
-    description="TODO: write this"
+    description="Manny Siverio has three decades experience as a stuntman and stunt coordinator working on major motion pictures and motion capture for video games"
+    subheading={false}
     {...props}
   >
     <div>

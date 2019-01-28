@@ -10,11 +10,11 @@ const SITE_URL =
 
 const FACEBOOK_APP_ID = "XXXXXXXXX";
 
-const defaultTitle = "My Website";
+const defaultTitle = "Siverio Stunts";
 const defaultDescription =
-  "This is a really awesome website where we can render on the server. Supa cool.";
+  "The best stunts, car chases, explosions, and more for major motion pictures and motion capture.";
 const defaultImage = `${SITE_URL}${logo}`;
-const defaultTwitter = "@cereallarceny";
+const defaultTwitter = "@siveriostunts";
 const defaultSep = " | ";
 
 class Page extends Component {

@@ -26,7 +26,7 @@ const navItems = [
       },
       {
         to: "/about/siverio-stunts-history",
-        text: "History of Siverio Stunts"
+        text: "Company History"
       }
     ]
   },
