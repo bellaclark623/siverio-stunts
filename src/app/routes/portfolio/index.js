@@ -26,6 +26,7 @@ export default props => {
       id="portfolio"
       title="Portfolio"
       description="View Manny Siverio's stunt work portfolio."
+      shouldListenToScroll={true}
       {...props}
     >
       <div className="row">
