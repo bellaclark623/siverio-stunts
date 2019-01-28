@@ -2,12 +2,19 @@ import React, { Component } from "react";
 import Page from "../components/page";
 
 export default class InteriorLayout extends Component {
-  state = { showBackToTop: null };
+  state = {
+    showBackToTop: null,
+    shouldListenToScroll: false
+  };
 
   componentDidMount = () => {
     const { contentContainer, contentWrapper } = this.props;
 
     if (contentWrapper.clientHeight > contentContainer.clientHeight + 200) {
+      this.setState({ shouldListenToScroll: true });
+    }
+
+    if (this.state.shouldListenToScroll || this.props.shouldListenToScroll) {
       contentContainer.addEventListener(
         "scroll",
         this.onContentContainerScroll
@@ -16,9 +23,9 @@ export default class InteriorLayout extends Component {
   };
 
   componentWillUnmount = () => {
-    const { contentContainer, contentWrapper } = this.props;
+    const { contentContainer } = this.props;
 
-    if (contentWrapper.clientHeight > contentContainer.clientHeight + 200) {
+    if (this.state.shouldListenToScroll || this.props.shouldListenToScroll) {
       contentContainer.removeEventListener(
         "scroll",
         this.onContentContainerScroll

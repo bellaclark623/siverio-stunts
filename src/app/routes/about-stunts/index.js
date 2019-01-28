@@ -8,6 +8,7 @@ export default props => (
     id="about-stunts"
     title="Getting into Stunts"
     description="What you need to know to make it in the stunt industry"
+    shouldListenToScroll={true}
     {...props}
   >
     <div>
