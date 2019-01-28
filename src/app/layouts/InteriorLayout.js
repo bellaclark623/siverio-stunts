@@ -10,11 +10,11 @@ export default class InteriorLayout extends Component {
   componentDidMount = () => {
     const { contentContainer, contentWrapper } = this.props;
 
-    if (contentWrapper.clientHeight > contentContainer.clientHeight + 200) {
+    if (
+      contentWrapper.clientHeight > contentContainer.clientHeight + 200 ||
+      !!this.props.shouldListenToScroll
+    ) {
       this.setState({ shouldListenToScroll: true });
-    }
-
-    if (this.state.shouldListenToScroll || this.props.shouldListenToScroll) {
       contentContainer.addEventListener(
         "scroll",
         this.onContentContainerScroll
