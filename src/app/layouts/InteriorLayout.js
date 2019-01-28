@@ -35,7 +35,7 @@ export default class InteriorLayout extends Component {
   };
 
   render() {
-    const { id, children, title, description } = this.props;
+    const { id, children, title, description, subheading } = this.props;
 
     const pageBody = children;
 
@@ -55,7 +55,9 @@ export default class InteriorLayout extends Component {
             <div className="row">
               <div className="col-12">
                 <h3>{title}</h3>
-                <p>{description}</p>
+                {subheading &&
+                  description &&
+                  description !== "" && <p>{description}</p>}
               </div>
             </div>
           </div>
@@ -68,3 +70,7 @@ export default class InteriorLayout extends Component {
     );
   }
 }
+
+InteriorLayout.defaultProps = {
+  subheading: true
+};
