@@ -11,7 +11,10 @@ import Routes from "./routes";
 import "./app.css";
 
 class App extends Component {
-  state = { contentWrapper: null };
+  state = {
+    contentContainer: null,
+    contentWrapper: null
+  };
 
   render() {
     return (
@@ -21,13 +24,25 @@ class App extends Component {
           current={this.props.location.pathname}
         />
         <div
-          id="content"
+          id="content-container"
           ref={ref =>
-            !this.state.contentWrapper && this.setState({ contentWrapper: ref })
+            !this.state.contentContainer &&
+            this.setState({ contentContainer: ref })
           }
         >
-          <Routes contentWrapper={this.state.contentWrapper} />
-          <Footer current={this.props.location.pathname} />
+          <div
+            id="content-wrapper"
+            ref={ref =>
+              !this.state.contentWrapper &&
+              this.setState({ contentWrapper: ref })
+            }
+          >
+            <Routes
+              contentContainer={this.state.contentContainer}
+              contentWrapper={this.state.contentWrapper}
+            />
+            <Footer current={this.props.location.pathname} />
+          </div>
         </div>
       </div>
     );

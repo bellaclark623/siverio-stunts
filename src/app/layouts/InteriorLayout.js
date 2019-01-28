@@ -5,16 +5,28 @@ export default class InteriorLayout extends Component {
   state = { showBackToTop: null };
 
   componentDidMount = () => {
-    const { contentWrapper } = this.props;
-    contentWrapper.addEventListener("scroll", this.onContentWrapperScroll);
+    const { contentContainer, contentWrapper } = this.props;
+
+    if (contentWrapper.clientHeight > contentContainer.clientHeight + 200) {
+      contentContainer.addEventListener(
+        "scroll",
+        this.onContentContainerScroll
+      );
+    }
   };
 
   componentWillUnmount = () => {
-    const { contentWrapper } = this.props;
-    contentWrapper.removeEventListener("scroll", this.onContentWrapperScroll);
+    const { contentContainer, contentWrapper } = this.props;
+
+    if (contentWrapper.clientHeight > contentContainer.clientHeight + 200) {
+      contentContainer.removeEventListener(
+        "scroll",
+        this.onContentContainerScroll
+      );
+    }
   };
 
-  onContentWrapperScroll = event => {
+  onContentContainerScroll = event => {
     if (!this.state.showBackToTop && event.target.scrollTop > 200) {
       this.setState({ showBackToTop: true });
     } else if (this.state.showBackToTop && event.target.scrollTop < 200) {
