@@ -136,7 +136,7 @@
     "id": "tt6706080",
     "name": "The Neighborhood",
     "link": "https://www.imdb.com/title/tt6706080/?ref_=nm_flmg_stn_20",
-    "year": "2019",
+    "years": "2019",
     "captions": ["TV Series", "stunt coordinator - 2 episodes"]
   },
   {
@@ -144,7 +144,7 @@
     "name": "The Wolf Hour",
     "link": "https://www.imdb.com/title/tt5342950/?ref_=nm_flmg_stn_21",
     "year": "2019",
-    "captions": ["additional stunt coordinator / (stunt coordinator"]
+    "captions": ["additional stunt coordinator", "stunt coordinator"]
   },
   {
     "id": "tt8682738",
@@ -242,7 +242,7 @@
     "name": "The Big Take",
     "link": "https://www.imdb.com/title/tt2619512/?ref_=nm_flmg_stn_35",
     "year": "2018",
-    "captions": ["stunt coordinator / (stunt double: Frank)"]
+    "captions": ["stunt coordinator", "stunt double: Frank)"]
   },
   {
     "id": "tt5037840",
@@ -1313,7 +1313,7 @@
     "name": "Kick-Ass 2",
     "link": "https://www.imdb.com/title/tt1650554/?ref_=nm_flmg_stn_188",
     "year": "2013",
-    "captions": ["additional stunt coordinator / (stunts - uncredited)"]
+    "captions": ["additional stunt coordinator", "stunts - uncredited)"]
   },
   {
     "id": "tt2479384",
@@ -1698,7 +1698,7 @@
     "name": "Watching TV with the Red Chinese",
     "link": "https://www.imdb.com/title/tt1261968/?ref_=nm_flmg_stn_243",
     "year": "2012",
-    "captions": ["stunt coordinator / (stunts)"]
+    "captions": ["stunt coordinator", "stunts)"]
   },
   {
     "id": "tt2063666",
@@ -1916,7 +1916,8 @@
     "link": "https://www.imdb.com/title/tt1458175/?ref_=nm_flmg_stn_274",
     "year": "2010",
     "captions": [
-      "assistant stunt coordinator - uncredited / (stunt coordinator)"
+      "assistant stunt coordinator - uncredited",
+      "stunt coordinator)"
     ]
   },
   {
@@ -3512,7 +3513,7 @@
     "name": "Bamboozled",
     "link": "https://www.imdb.com/title/tt0215545/?ref_=nm_flmg_stn_501",
     "year": "2000",
-    "captions": ["stunt coordinator / (stunts)"]
+    "captions": ["stunt coordinator", "stunts)"]
   },
   {
     "id": "tt0120202",
@@ -3854,7 +3855,7 @@
     "name": "Office Killer",
     "link": "https://www.imdb.com/title/tt0119819/?ref_=nm_flmg_stn_549",
     "year": "1997",
-    "captions": ["stunt coordinator / (stunts)"]
+    "captions": ["stunt coordinator", "stunts)"]
   },
   {
     "id": "tt0118887",
@@ -3875,7 +3876,7 @@
     "name": "Kiss Me, Guido",
     "link": "https://www.imdb.com/title/tt0119465/?ref_=nm_flmg_stn_552",
     "year": "1997",
-    "captions": ["stunt coordinator / (stunt double: Warren)"]
+    "captions": ["stunt coordinator", "stunt double: Warren)"]
   },
   {
     "id": "tt0119457",
@@ -4048,7 +4049,7 @@
     "name": "Stonewall",
     "link": "https://www.imdb.com/title/tt0114550/?ref_=nm_flmg_stn_575",
     "year": "1995",
-    "captions": ["stunt coordinator / (stunt player)"]
+    "captions": ["stunt coordinator", "stunt player)"]
   },
   {
     "id": "tt0112628",

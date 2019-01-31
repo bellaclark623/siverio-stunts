@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import filmsData from "../../data/films.json";
 import InteriorLayout from "../../layouts/InteriorLayout";
 
@@ -47,14 +47,21 @@ export default props => {
           .map((year, index) => {
             return (
               <div key={index}>
-                <h5 id={`year-${year}`}>{year}</h5>
-                <ul>
+                <h3 className="list-title" id={`year-${year}`}>
+                  {year}
+                </h3>
+                <ul className="dashed">
                   {years[year].map((film, index) => {
                     return (
                       <li key={index}>
                         <p>
-                          {film.name} -&nbsp;
-                          <span>{film.captions.join(", ")}</span>
+                          <a href={film.link}>{film.name}</a>
+                          {!!film.captions.length && (
+                            <Fragment>
+                              &nbsp;-&nbsp;
+                              <span>{film.captions.join(", ")}</span>
+                            </Fragment>
+                          )}
                         </p>
                       </li>
                     );

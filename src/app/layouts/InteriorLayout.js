@@ -14,11 +14,6 @@ export default class InteriorLayout extends Component {
       this.setState({ shouldListenToScroll: true });
     }
 
-    console.log(
-      this.state.shouldListenToScroll,
-      this.props.shouldListenToScroll
-    );
-
     if (this.state.shouldListenToScroll || this.props.shouldListenToScroll) {
       contentContainer.addEventListener(
         "scroll",

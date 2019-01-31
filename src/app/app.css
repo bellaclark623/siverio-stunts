@@ -1,3 +1,30 @@
+ul {
+  margin: 0;
+}
+ul.dashed {
+  list-style-type: none;
+}
+ul.dashed > li {
+  text-indent: -5px;
+  position: relative;
+  line-height: 1.2rem;
+}
+ul.dashed > li:before {
+  content: "\2014";
+  text-indent: -5px;
+  position: absolute;
+  right: calc(100% + 1rem);
+  color: lightGray;
+}
+
+.lists-wrapper a {
+  font-weight: bold;
+}
+
+.lists-wrapper span {
+  font-style: italic;
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -51,7 +78,7 @@
   color: white;
 }
 
-.lists-wrapper h5 {
+.lists-wrapper .list-title {
   margin-top: 1rem;
   padding-top: 1rem;
 }
