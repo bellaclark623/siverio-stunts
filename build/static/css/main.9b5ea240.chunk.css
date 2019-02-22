@@ -12,8 +12,22 @@
   height: 85vh;
 }
 .InteriorLayout-subheading {
-  background: #e8e8e8;
+  background: #161717;
 }
+
+.InteriorLayout-subheading:after {
+  content: "";
+  background: url(../../assets/backgroundlogo.jpg);
+  background-size: 700px;
+  opacity: 0.05;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 .InteriorLayout-subheading p {
   margin-bottom: 0;
 }

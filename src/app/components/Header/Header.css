@@ -1,0 +1,13 @@
+.navbar {
+  background: #0e0e0e !important;
+}
+
+.navbar-brand {
+  font-family: "Impact";
+  letter-spacing: 0.04rem;
+  font-size: 1.8rem;
+}
+
+.navbar-nav {
+  align-items: center;
+}

@@ -7,12 +7,12 @@ import InteriorLayout from "../../layouts/InteriorLayout";
 export default props => (
   <InteriorLayout
     id="contact"
-    title="Contact Us"
+    title="Contact"
     description="I would love to hear from you. Fill out the form below!"
     {...props}
   >
     <div className="row">
-      <main className="col-12 col-md-9">
+      <main className="col-12 col-md-9 mb-3">
         <Form>
           <FormGroup>
             <Label for="contactFormFullName">Full Name</Label>
@@ -27,7 +27,7 @@ export default props => (
             <Input type="email" name="email" id="exampleEmail" />
           </FormGroup>
           <FormGroup>
-            <Label for="exampleText">Text Area</Label>
+            <Label for="exampleText">Message</Label>
             <Input type="textarea" name="text" id="exampleText" />
           </FormGroup>
           <Button>Submit</Button>

@@ -37,10 +37,12 @@ class App extends Component {
               this.setState({ contentWrapper: ref })
             }
           >
-            <Routes
-              contentContainer={this.state.contentContainer}
-              contentWrapper={this.state.contentWrapper}
-            />
+            <main>
+              <Routes
+                contentContainer={this.state.contentContainer}
+                contentWrapper={this.state.contentWrapper}
+              />
+            </main>
             <Footer current={this.props.location.pathname} />
           </div>
         </div>

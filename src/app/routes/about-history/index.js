@@ -9,6 +9,6 @@ export default props => (
     subheading={false}
     {...props}
   >
-    <p>// TODO: Ask Manny to send over this</p>
+    <p>TODO: Ask Manny to send over this</p>
   </InteriorLayout>
 );

@@ -77,6 +77,7 @@ export default class Home extends Component {
                 <TwitterTimelineEmbed
                   noFooter
                   sourceType="profile"
+                  theme="dark"
                   screenName="siveriostunts"
                   options={{
                     height: this.state.calculatedHeight

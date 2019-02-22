@@ -3,6 +3,8 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand } from "reactstrap";
 
 import SharedNav from "../SharedNav";
 
+import "./Header.css";
+
 export default class Header extends Component {
   constructor(props) {
     super(props);
@@ -27,8 +29,13 @@ export default class Header extends Component {
 
     return (
       <header id="header">
-        <Navbar dark color="dark" expand="md" className="container-fluid">
-          <NavbarBrand href="/">Siverio Stunts</NavbarBrand>
+        <Navbar
+          dark
+          color="dark"
+          expand="md"
+          className="navbar container-fluid"
+        >
+          <NavbarBrand href="/">Manny Siverio</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <SharedNav current={current} className="ml-auto" />

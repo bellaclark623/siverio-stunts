@@ -127,10 +127,15 @@ export default ({ className, current, flatten }) => {
         if (navItem.children) {
           TheLink = (
             <UncontrolledDropdown key={index} nav inNavbar>
-              <DropdownToggle nav caret>
+              <DropdownToggle
+                nav
+                caret
+                className="dropdown-toggle"
+                dataToggle="dropdown"
+              >
                 {navItem.text}
               </DropdownToggle>
-              <DropdownMenu>
+              <DropdownMenu className="dropdown-menu">
                 {navItem.children.map((dropdownItem, index) => {
                   return (
                     <DropdownItem

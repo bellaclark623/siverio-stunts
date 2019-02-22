@@ -1,25 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300:900");
+
+body {
+  background: #1d1e1f;
+}
+
+main {
+  background-image: url(./assets/bg.png);
+}
+
+* {
+  color: white;
+}
+
+select {
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Impact";
+  color: #ad0000;
+}
+
+.faq-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 0.66rem;
+  font-size: 1.17rem;
+}
+
+.faq {
+  position: relative;
+  margin-left: calc(20px + 2px);
+}
+
+.faq:before {
+  content: "\25B6";
+  /* 25B6 */
+  position: absolute;
+  right: calc(100% + 6px);
+  top: 5px;
+  font-size: 0.7rem;
+}
+
+.faq.faq-expanded:before {
+  content: "\25BC";
+}
+
+header * {
+  font-weight: 600;
+  letter-spacing: 0.03rem;
+}
+
+.lists-wrapper a {
+  font-family: "Lato";
+  font-weight: 900;
+}
+
+p {
+  line-height: 1.9rem;
+  letter-spacing: 0.03rem;
+  font-size: 1rem;
+}
+
+p,
+li,
+td,
+th {
+  font-family: "Lato";
+  font-weight: 300;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  /* font-style: italic; */
+  letter-spacing: 0.03rem;
+  color: #ddd;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+main a,
+footer a {
+  color: #c00;
+}
+
+main a:hover,
+footer a:hover {
+  color: #e00;
+}
+
+.form-control {
+  color: white;
+  background-color: #37383a;
+  border: none;
+}
+.form-control:focus {
+  background-color: #484a4e;
+  color: white;
+  border: none;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0 30px #484a4e inset !important;
+  box-shadow: 0 0 0 30px #484a4e inset !important;
+}
+
 ul {
   margin: 0;
 }
 ul.dashed {
   list-style-type: none;
+  padding: 0 0 0 1.33rem;
 }
 ul.dashed > li {
   text-indent: -5px;
   position: relative;
   line-height: 1.2rem;
 }
-ul.dashed > li:before {
+/* ul.dashed > li:before {
   content: "\2014";
   text-indent: -5px;
   position: absolute;
   right: calc(100% + 1rem);
   color: lightGray;
-}
-
-.lists-wrapper a {
-  font-weight: bold;
-}
+} */
 
 .lists-wrapper span {
   font-style: italic;
@@ -42,10 +161,65 @@ ul.dashed > li:before {
   background-image: url("./assets/avengers.jpg");
   background-size: cover;
   height: 85vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero .foreground,
+.hero .background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 85vh;
+  overflow: hidden;
+}
+
+.hero .foreground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .background {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero video {
+  opacity: 0.7;
+}
+
+.hero h1 {
+  color: white;
+}
+
+.hero button:hover {
+  background: #e00;
+  cursor: pointer;
+}
+
+.hero button {
+  background: #c00;
+  color: white;
+  border-radius: 7px;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+.hero-text-wrapper {
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.35);
+  max-width: 690px;
+  margin-bottom: 18vh;
+  padding: 2rem;
 }
 
 .InteriorLayout-subheading {
-  background: #e8e8e8;
+  background: #171819;
 }
 .InteriorLayout-subheading p {
   margin-bottom: 0;
@@ -74,7 +248,70 @@ ul.dashed > li:before {
   text-decoration: none;
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #4e4e50;
+  border: none;
+  border-radius: 0%;
+  color: white;
+  text-align-last: center;
+  /* padding-right: 20px; */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  direction: rtl;
+}
+
+select::-ms-expand {
+  display: none; /* hide the default arrow in ie10 and ie11 */
+}
+
 #links li a:hover {
+  color: white;
+}
+
+a.nav-link {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  background-color: #252525 !important;
+  color: white !important;
+}
+
+.dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+  background-color: #252525;
+  color: white;
+}
+
+.dropdown-menu {
+  background-color: #252525 !important;
+  color: white !important;
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #252525;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #252525 !important;
+  color: white !important;
+}
+
+.dropdown-item {
+  background-color: #252525 !important;
+  color: #7d7d7d;
+}
+
+.dropdown-item:hover {
+  background-color: #252525 !important;
   color: white;
 }
 
@@ -123,7 +360,7 @@ ul.dashed > li:before {
 }
 
 footer {
-  background: #efefef;
+  background: #121212;
   font-size: 0.9rem;
 }
 
@@ -157,4 +394,8 @@ footer .row > div:last-child {
     display: flex;
     align-items: center;
   }
+}
+
+.faq-button {
+  text-align: left;
 }

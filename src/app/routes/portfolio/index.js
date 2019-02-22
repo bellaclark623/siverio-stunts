@@ -4,7 +4,6 @@ import InteriorLayout from "../../layouts/InteriorLayout";
 
 export default props => {
   const years = {};
-
   // Create an array for each year found in the data
   filmsData.forEach(film => {
     if (!years[film.year]) {
@@ -36,7 +35,14 @@ export default props => {
             {Object.keys(years)
               .sort((a, b) => b - a)
               .map((year, index) => {
-                return <option key={index}>{year}</option>;
+                return (
+                  <option
+                    key={index}
+                    value={year !== "" ? year : "In Production"}
+                  >
+                    {year !== "" ? year : "In Production"}
+                  </option>
+                );
               })}
           </select>
         </div>
@@ -47,9 +53,12 @@ export default props => {
           .map((year, index) => {
             return (
               <div key={index}>
-                <h3 className="list-title" id={`year-${year}`}>
-                  {year}
-                </h3>
+                <h4
+                  className="list-title"
+                  id={year !== "" ? `year-${year}` : `year-In-Production`}
+                >
+                  {year !== "" ? year : "In Production"}
+                </h4>
                 <ul className="dashed">
                   {years[year].map((film, index) => {
                     return (

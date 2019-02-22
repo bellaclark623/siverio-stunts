@@ -14,7 +14,7 @@ export default props => (
     <div>
       <div className="row">
         <div className="col-12 col-md-12">
-          <dl className="faq">
+          <dl className="faqs">
             {faqData.map(faqItem => (
               <FAQItem question={faqItem.question} answer={faqItem.answer} />
             ))}
