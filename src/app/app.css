@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300:900");
 
 body {
-  background: #1d1e1f;
+  background: black;
+  overflow-y: hidden;
 }
 
 main {
@@ -31,7 +32,10 @@ h6 {
   border: none;
   padding: 0;
   margin-bottom: 0.66rem;
-  font-size: 1.17rem;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 100;
+  cursor: pointer;
 }
 
 .faq {
@@ -60,12 +64,15 @@ header * {
 .lists-wrapper a {
   font-family: "Lato";
   font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: white;
 }
 
 p {
   line-height: 1.9rem;
   letter-spacing: 0.03rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 p,
@@ -141,7 +148,9 @@ ul.dashed > li {
 } */
 
 .lists-wrapper span {
-  font-style: italic;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: red;
 }
 
 #app {
@@ -197,30 +206,33 @@ ul.dashed > li {
 }
 
 .hero button:hover {
-  background: #e00;
+  background: rgba(255, 0, 0, 0.25);
   cursor: pointer;
+  border: 0.05rem solid #e00;
 }
 
 .hero button {
-  background: #c00;
+  /* background: #c00; */
   color: white;
   border-radius: 7px;
   padding: 0.5rem 1rem;
   border: none;
+  background: none;
+  border: 0.05rem solid white;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 0.7rem;
 }
 
 .hero-text-wrapper {
   text-align: center;
   color: white;
-  background: rgba(0, 0, 0, 0.35);
+  /* background: rgba(0, 0, 0, 0.35); */
   max-width: 690px;
   margin-bottom: 18vh;
   padding: 2rem;
 }
 
-.InteriorLayout-subheading {
-  background: #171819;
-}
 .InteriorLayout-subheading p {
   margin-bottom: 0;
 }
@@ -249,18 +261,9 @@ ul.dashed > li {
 }
 
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #4e4e50;
-  border: none;
-  border-radius: 0%;
+  background: rgba(95, 95, 95, 0.25);
   color: white;
-  text-align-last: center;
-  /* padding-right: 20px; */
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  direction: rtl;
+  margin-left: 0.5rem;
 }
 
 select::-ms-expand {
@@ -281,14 +284,15 @@ a.nav-link {
   display: block;
   background-color: #252525 !important;
   color: white !important;
+  border-radius: 0%;
 }
 
-.dropdown > .dropdown-toggle:active {
-  /*Without this, clicking will make it sticky*/
+/*Without this, clicking will make it sticky*/
+/* .dropdown > .dropdown-toggle:active {
   pointer-events: none;
   background-color: #252525;
   color: white;
-}
+} */
 
 .dropdown-menu {
   background-color: #252525 !important;
@@ -297,6 +301,10 @@ a.nav-link {
 
 .navbar-nav .dropdown-menu {
   background-color: #252525;
+}
+
+.navbar {
+  background: black !important;
 }
 
 .dropdown-item.active,
@@ -308,11 +316,15 @@ a.nav-link {
 .dropdown-item {
   background-color: #252525 !important;
   color: #7d7d7d;
+  text-transform: uppercase;
+  font-size: 0.7rem;
 }
 
 .dropdown-item:hover {
   background-color: #252525 !important;
   color: white;
+  text-transform: uppercase;
+  font-size: 0.7rem;
 }
 
 .lists-wrapper .list-title {
@@ -340,13 +352,17 @@ a.nav-link {
 #back-to-top {
   position: absolute;
   bottom: 1rem;
+  border: none;
   right: 1rem;
-  background: #343a40;
+  background: rgba(103, 103, 103, 0.25);
   font-size: 0.75rem;
   padding: 0.3rem 0.5rem;
-  color: white;
+  color: #a9a9a9;
   border-radius: 4px;
   visibility: hidden;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 0.7rem;
 }
 
 #back-to-top.active {
@@ -360,12 +376,18 @@ a.nav-link {
 }
 
 footer {
-  background: #121212;
+  /* background: #121212; */
+  background-color: black;
   font-size: 0.9rem;
+  padding-bottom: 0.6rem;
 }
 
 footer nav li {
   margin-right: 1rem;
+}
+
+footer nav li:last-child {
+  margin-right: 0;
 }
 
 footer .navbar-nav {
@@ -398,4 +420,145 @@ footer .row > div:last-child {
 
 .faq-button {
   text-align: left;
+}
+
+.InteriorLayout-subheading {
+  background-color: black;
+}
+
+.InteriorLayout-subheading p {
+  margin-bottom: 0;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+}
+
+.navbar-dark .navbar-toggler {
+  border: none;
+}
+
+.siveriostuntslogo {
+  width: 120%;
+  height: inherit;
+}
+
+.togglewrapper {
+  margin: left;
+}
+
+a.navbar-brand {
+  width: 5rem;
+}
+
+footer .navbar-nav {
+  text-align: center;
+  display: inline-block;
+  float: none;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+footer .row > div:last-child {
+  text-align: center;
+  display: inline-block;
+  float: none;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+footer .col-12 {
+  flex: unset;
+  max-width: 100%;
+}
+
+@media (max-width: 575.98px) {
+  .dropdown-menu {
+    left: 50%;
+    right: auto;
+    text-align: center;
+    /* transform: translate(-50%, 0); */
+  }
+}
+
+@media (min-width: 576px) {
+  .dropdown-menu {
+    left: 50%;
+    right: auto;
+    text-align: center;
+    /* transform: translate(-50%, 0); */
+  }
+}
+
+@media (min-width: 768px) {
+  .dropdown-menu {
+    left: 8%;
+    right: auto;
+    text-align: left;
+    /* transform: translate(-50%, 0); */
+  }
+}
+
+.dropdown-toggle,
+.nav-link {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .dropdown:hover > .dropdown-menu {
+    background-color: black !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    background-color: black !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-item.active,
+  .dropdown-item:active {
+    background-color: black !important;
+    color: white !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-item {
+    background-color: black !important;
+    color: #7d7d7d;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-item:hover {
+    background-color: black !important;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: sub;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.InteriorLayout-subheading {
+  background-color: black;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: white;
+}
+
+h3.about-manny {
+  margin: 0 auto;
+  display: inline-block;
+  width: 30em;
 }

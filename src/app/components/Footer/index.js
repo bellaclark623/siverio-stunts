@@ -7,7 +7,7 @@ export default ({ current }) => (
     <div />
     <div className="container py-3">
       <div className="row">
-        <div className="col-12 flex-md-grow-1 pb-2 pb-sm-0">
+        <div className="col-12 flex-md-grow-1 pb-2 pb-sm-0 d-flex justify-content-center">
           <nav>
             <SharedNav flatten current={current} />
           </nav>

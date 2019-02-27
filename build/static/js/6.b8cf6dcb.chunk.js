@@ -4579,9 +4579,9 @@
         return o.a.createElement(
           s.a,
           {
-            id: "portfolio",
-            title: "Portfolio",
-            description: "View Manny Siverio's stunt work portfolio."
+            id: "credits",
+            title: "Credits",
+            description: "View Manny Siverio's stunt work credits."
           },
           o.a.createElement(
             "div",

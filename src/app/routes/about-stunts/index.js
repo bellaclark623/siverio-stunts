@@ -3,13 +3,16 @@ import InteriorLayout from "../../layouts/InteriorLayout";
 import faqData from "../../data/faq";
 import FAQItem from "../../components/FAQItem";
 
+import "./stunts.css";
+
 export default props => (
   <InteriorLayout
     id="about-stunts"
-    title="Getting into Stunts"
+    title="Getting into Stunt Work"
     description="What you need to know to make it in the stunt industry"
     shouldListenToScroll={true}
     {...props}
+    className="about-stunts"
   >
     <div>
       <div className="row">

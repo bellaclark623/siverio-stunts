@@ -1,6 +1,7 @@
 // The basics
 import React, { Component } from "react";
 import { withRouter } from "react-router";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -37,13 +38,17 @@ class App extends Component {
               this.setState({ contentWrapper: ref })
             }
           >
-            <main>
-              <Routes
-                contentContainer={this.state.contentContainer}
-                contentWrapper={this.state.contentWrapper}
-              />
-            </main>
-            <Footer current={this.props.location.pathname} />
+            {this.state.contentWrapper && (
+              <ParallaxProvider scrollContainer={this.state.contentContainer}>
+                <main>
+                  <Routes
+                    contentContainer={this.state.contentContainer}
+                    contentWrapper={this.state.contentWrapper}
+                  />
+                </main>
+                <Footer current={this.props.location.pathname} />
+              </ParallaxProvider>
+            )}
           </div>
         </div>
       </div>

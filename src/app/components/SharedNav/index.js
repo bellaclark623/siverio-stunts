@@ -11,6 +11,8 @@ import {
 
 import { FaTwitter, FaImdb, FaInstagram, FaYoutube } from "react-icons/fa";
 
+import "./SharedNav.css";
+
 const navItems = [
   {
     to: "/about",
@@ -35,8 +37,8 @@ const navItems = [
     text: "Services"
   },
   {
-    to: "/portfolio",
-    text: "Portfolio"
+    to: "/credits",
+    text: "Credits"
   },
   {
     to: "/media",
@@ -47,20 +49,25 @@ const navItems = [
     text: "Contact"
   },
   {
-    to: "https://www.imdb.com/name/nm0803371/",
-    text: <FaImdb />
-  },
-  {
-    to: "https://www.instagram.com/siveriostunts/",
-    text: <FaInstagram />
-  },
-  {
-    to: "https://twitter.com/siveriostunts",
-    text: <FaTwitter />
-  },
-  {
-    to: "https://www.youtube.com/user/SiverioStunts",
-    text: <FaYoutube />
+    wrapperClass: "social-icons-wrapper",
+    items: [
+      {
+        to: "https://www.imdb.com/name/nm0803371/",
+        text: <FaImdb />
+      },
+      {
+        to: "https://www.instagram.com/siveriostunts/",
+        text: <FaInstagram />
+      },
+      {
+        to: "https://twitter.com/siveriostunts",
+        text: <FaTwitter />
+      },
+      {
+        to: "https://www.youtube.com/user/SiverioStunts",
+        text: <FaYoutube />
+      }
+    ]
   }
   // {
   //   to: '/profile/1',
@@ -101,6 +108,12 @@ const isCurrent = (to, current) => {
   return false;
 };
 
+const renderNavItem = (key, item, current) => (
+  <NavLink target={item.to.indexOf("http") > -1 ? "_blank" : ""} href={item.to}>
+    {item.text}
+  </NavLink>
+);
+
 export default ({ className, current, flatten }) => {
   let sortedNavItems = navItems;
 
@@ -119,9 +132,34 @@ export default ({ className, current, flatten }) => {
     });
   }
 
+  let wrappedNavItems = [];
+
+  sortedNavItems.forEach(navItem => {
+    if (!navItem.items) {
+      wrappedNavItems.push(navItem);
+      return;
+    }
+
+    var wrappedContent = [];
+
+    navItem.items.forEach(item => {
+      console.log(item);
+
+      wrappedContent.push(
+        renderNavItem(item.to, item, isCurrent(current, item.to))
+      );
+    });
+
+    wrappedNavItems.push({
+      content: <li className={navItem.wrapperClass}>{[...wrappedContent]}</li>
+    });
+  });
+
+  console.log(wrappedNavItems);
+
   return (
     <Nav navbar className={className}>
-      {sortedNavItems.map((navItem, index) => {
+      {wrappedNavItems.map((navItem, index) => {
         let TheLink;
 
         if (navItem.children) {
@@ -136,22 +174,20 @@ export default ({ className, current, flatten }) => {
                 {navItem.text}
               </DropdownToggle>
               <DropdownMenu className="dropdown-menu">
-                {navItem.children.map((dropdownItem, index) => {
-                  return (
-                    <DropdownItem
-                      key={index}
-                      href={dropdownItem.to}
-                      active={isCurrent(current, dropdownItem.to)}
-                    >
-                      {dropdownItem.text}
-                    </DropdownItem>
-                  );
-                })}
+                {navItem.children.map((dropdownItem, index) => (
+                  <DropdownItem
+                    key={index}
+                    href={dropdownItem.to}
+                    active={isCurrent(current, dropdownItem.to)}
+                  >
+                    {dropdownItem.text}
+                  </DropdownItem>
+                ))}
               </DropdownMenu>
             </UncontrolledDropdown>
           );
         } else {
-          TheLink = (
+          TheLink = navItem.content || (
             <NavItem key={index} active={isCurrent(current, navItem.to)}>
               <NavLink
                 target={navItem.to.indexOf("http") > -1 ? "_blank" : ""}

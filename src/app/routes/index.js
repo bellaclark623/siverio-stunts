@@ -61,12 +61,12 @@ const Services = injectedProps =>
     injectedProps
   );
 
-const Portfolio = injectedProps =>
+const Credits = injectedProps =>
   LoadableWithInjectedProps(
     {
-      loader: () => import("./portfolio"),
+      loader: () => import("./credits"),
       loading: () => null,
-      modules: ["portfolio"]
+      modules: ["credits"]
     },
     injectedProps
   );
@@ -94,7 +94,7 @@ const Contact = injectedProps =>
 export default props => (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route exact path="/portfolio" component={Portfolio(props)} />
+    <Route exact path="/credits" component={Credits(props)} />
     <Route exact path="/about/manny-siverio" component={AboutManny(props)} />
     <Route exact path="/about/stunt-work" component={AboutStunts(props)} />
     <Route

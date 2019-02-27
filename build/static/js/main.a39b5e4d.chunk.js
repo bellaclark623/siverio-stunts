@@ -238,7 +238,7 @@
             ]
           },
           { to: "/services", text: "Services" },
-          { to: "/portfolio", text: "Portfolio" },
+          { to: "/credits", text: "Credits" },
           { to: "/media", text: "Media" },
           { to: "/contact", text: "Contact" },
           {
@@ -469,7 +469,7 @@
           loading: function() {
             return null;
           },
-          modules: ["portfolio"]
+          modules: ["credits"]
         }),
         ae = l()({
           loader: function() {
@@ -516,7 +516,7 @@
             }),
             r.a.createElement(K.a, {
               exact: !0,
-              path: "/portfolio",
+              path: "/credits",
               component: ne
             }),
             r.a.createElement(K.a, {

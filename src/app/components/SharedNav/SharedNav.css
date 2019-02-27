@@ -1,0 +1,11 @@
+.social-icons-wrapper {
+  display: inline-block;
+}
+
+.social-icons-wrapper a {
+  display: inline;
+}
+footer .social-icons-wrapper .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}

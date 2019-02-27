@@ -1,4 +1,7 @@
 import React, { Fragment } from "react";
+
+import "./credits.css";
+
 import filmsData from "../../data/films.json";
 import InteriorLayout from "../../layouts/InteriorLayout";
 
@@ -22,11 +25,13 @@ export default props => {
 
   return (
     <InteriorLayout
-      id="portfolio"
-      title="Portfolio"
-      description="View Manny Siverio's stunt work portfolio."
+      id="credits"
+      title="Stunt Credits"
+      description="View Manny Siverio's stunt credits"
+      subheading={false}
       shouldListenToScroll={true}
       {...props}
+      className="film-credits"
     >
       <div className="row">
         <div className="col-12">

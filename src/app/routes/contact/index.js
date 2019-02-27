@@ -4,15 +4,22 @@ import { FaMobileAlt } from "react-icons/fa";
 
 import InteriorLayout from "../../layouts/InteriorLayout";
 
+import backgroundImage from "../../assets/contact-bg.png";
+
+import "./contact.css";
+
 export default props => (
   <InteriorLayout
     id="contact"
     title="Contact"
-    description="I would love to hear from you. Fill out the form below!"
+    description="Contact Manny Siverio"
+    subheading={false}
     {...props}
+    className="contact-page"
+    backgroundImage={backgroundImage}
   >
-    <div className="row">
-      <main className="col-12 col-md-9 mb-3">
+    <div className="row form">
+      <div className="col-12 col-md-9 mb-3">
         <Form>
           <FormGroup>
             <Label for="contactFormFullName">Full Name</Label>
@@ -32,7 +39,7 @@ export default props => (
           </FormGroup>
           <Button>Submit</Button>
         </Form>
-      </main>
+      </div>
       <aside className="col-12 col-md-3">
         <h4>Contact Details</h4>
         <table>

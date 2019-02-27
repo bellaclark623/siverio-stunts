@@ -1,6 +1,11 @@
 import React from "react";
 import Page from "../components/page";
 
+import apple from "../assets/app-store-badge.svg";
+import android from "../assets/google-play-badge.svg";
+
+import "./HomepageLayout.css";
+
 export default ({ id, children, title, description }) => (
   <Page id={id} title={title} description={description}>
     <div className="hero">
@@ -18,13 +23,27 @@ export default ({ id, children, title, description }) => (
       </div>
       <div className="foreground">
         <div className="hero-text-wrapper">
-          <h1>Manny Siverio</h1>
+          <h1>Servio Stunts Stunt Directory</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            ullam? Molestiae animi voluptates inventore debitis.
+            Download our app on iOS or Android to get into the stunt industry
           </p>
-          <a href="/portfolio">
-            <button className="primary-button">View Previous Works</button>
+          <a href="/credits">
+            <div className="badge-wrapper">
+              <a href="https://itunes.apple.com/us/app/siverio-stunt/id1074190134?mt=8">
+                <img
+                  src={apple}
+                  alt="Apple Store Badge"
+                  className="apple-badge"
+                />
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.siveriostunt">
+                <img
+                  src={android}
+                  alt="Play Store Badge"
+                  className="play-badge"
+                />
+              </a>
+            </div>
           </a>
         </div>
       </div>

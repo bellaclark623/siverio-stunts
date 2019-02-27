@@ -1,21 +1,24 @@
 import React from "react";
 import InteriorLayout from "../../layouts/InteriorLayout";
-import mannyImg from "../../assets/mannypic3.jpg";
+// import mannyImg from "../../assets/mannypic3.jpg";
+
+import "./manny.css";
 
 export default props => (
   <InteriorLayout
     id="about-manny"
-    title="About Manny Siverio"
+    title="Manny Siverio"
     description="Manny Siverio has three decades experience as a stuntman and stunt coordinator working on major motion pictures and motion capture for video games"
     subheading={false}
     {...props}
+    className="about-manny"
   >
     <div>
       <div className="row mb-4">
-        <div className="col-12 col-md-4">
+        {/* <div className="col-12 col-md-4 pb-1">
           <img src={mannyImg} alt="Manny Siverio, Owner of Siverio Stunts" />
-        </div>
-        <div className="col-12 col-md-8">
+        </div> */}
+        <div className="col-12">
           <p>
             Manny Siverio is a member of SAG (Screen Actors Guild), DGA
             (Directors Guild of America), AFTRA (American Federation of

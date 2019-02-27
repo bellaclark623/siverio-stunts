@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import Page from "../components/page";
+import classnames from "classnames";
+import { ParallaxBanner } from "react-scroll-parallax";
+import debounce from "../../utils";
+
+import "./InteriorLayout.css";
 
 export default class InteriorLayout extends Component {
   state = {
@@ -17,7 +22,7 @@ export default class InteriorLayout extends Component {
     if (this.state.shouldListenToScroll || this.props.shouldListenToScroll) {
       contentContainer.addEventListener(
         "scroll",
-        this.onContentContainerScroll
+        debounce(this.onContentContainerScroll, 50)
       );
     }
   };
@@ -28,7 +33,7 @@ export default class InteriorLayout extends Component {
     if (this.state.shouldListenToScroll || this.props.shouldListenToScroll) {
       contentContainer.removeEventListener(
         "scroll",
-        this.onContentContainerScroll
+        debounce(this.onContentContainerScroll, 50)
       );
     }
   };
@@ -42,7 +47,14 @@ export default class InteriorLayout extends Component {
   };
 
   render() {
-    const { id, children, title, description, subheading } = this.props;
+    const {
+      id,
+      children,
+      title,
+      description,
+      className,
+      backgroundImage
+    } = this.props;
 
     const pageBody = children;
 
@@ -57,22 +69,38 @@ export default class InteriorLayout extends Component {
 
     return (
       <Page id={id} title={title} description={description}>
-        <div className="InteriorLayout-subheading" id="top">
-          <div className="container py-4">
-            <div className="row">
-              <div className="col-12">
-                <h3>{title}</h3>
-                {subheading &&
-                  description &&
-                  description !== "" && <p>{description}</p>}
-              </div>
-            </div>
-          </div>
+        <div className={classnames("InteriorLayout-subheading", className)}>
+          <ParallaxBanner
+            layers={[
+              {
+                image: backgroundImage,
+                amount: 0.5,
+                slowerScrollRate: false
+              },
+              {
+                children: (
+                  <h3 className="InteriorLayout-subheadingBody">{title}</h3>
+                ),
+                expanded: false,
+                amount: 0.5,
+                slowerScrollRate: false
+              }
+            ]}
+            style={{
+              height: "calc(100vh - 72px - 15vh)"
+            }}
+          />
         </div>
-        <div className="container pt-4 pb-5">{pageBody}</div>
-        <a href="#top" id="back-to-top" className={activeToggle}>
+        <div className="container py-5">{pageBody}</div>
+        <button
+          onClick={e => {
+            document.getElementById("content-container").scrollTop = 0;
+          }}
+          id="back-to-top"
+          className={activeToggle}
+        >
           Back to Top
-        </a>
+        </button>
       </Page>
     );
   }

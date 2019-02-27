@@ -3,6 +3,7 @@ import { TwitterTimelineEmbed } from "react-twitter-embed";
 import YouTube from "react-youtube";
 import HomepageLayout from "../../layouts/HomepageLayout";
 
+import "./home.css";
 function getElementWidth(el) {
   let youtubeWrapperWidth;
 
@@ -53,6 +54,12 @@ export default class Home extends Component {
     return (
       <HomepageLayout id="homepage">
         <div className="container py-5">
+          <div className="row">
+            <p>
+              Serving the best stunts, car chases, explosions, and more for
+              major motion pictures, shows, and motion capture since 1987.
+            </p>
+          </div>
           <div className="row">
             <main
               className="col-12 col-md-9"

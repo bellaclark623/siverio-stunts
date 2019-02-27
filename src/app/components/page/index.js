@@ -10,9 +10,9 @@ const SITE_URL =
 
 const FACEBOOK_APP_ID = "XXXXXXXXX";
 
-const defaultTitle = "Siverio Stunts";
+const defaultTitle = "Manny Siverio";
 const defaultDescription =
-  "The best stunts, car chases, explosions, and more for major motion pictures and motion capture.";
+  "Serving the best stunts, car chases, explosions, and more for major motion pictures and motion capture.";
 const defaultImage = `${SITE_URL}${logo}`;
 const defaultTwitter = "@siveriostunts";
 const defaultSep = " | ";

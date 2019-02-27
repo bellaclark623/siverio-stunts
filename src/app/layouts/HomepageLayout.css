@@ -1,0 +1,14 @@
+.badge-wrapper {
+  position: relative;
+}
+
+.badge-wrapper [class*="badge"] {
+  max-width: 150px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  height: 44.4px;
+}
+
+.badge-wrapper a:last-of-type [class*="badge"] {
+  margin-right: 0;
+}
